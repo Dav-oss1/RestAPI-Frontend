@@ -25,7 +25,6 @@ export async function addProduct(data: Product) {
         } else {
             throw new Error('Datos no válido')
         }
-        console.log(result)
 
     } catch (error) {
         console.log(error)
@@ -119,8 +118,6 @@ export async function deteProduct(id: Product['id']) {
     } catch (error) {
         console.log(error)
     }
-
-    console.log(id)
 }
 
 export async function updateProductAvailability(id: Product['id']) {
@@ -128,7 +125,7 @@ export async function updateProductAvailability(id: Product['id']) {
     try {
         const url = `${import.meta.env.VITE_API_URL}/api/products/${id}`
         await axios.patch(url)
-        console.log(id)
+
     } catch (error) {
         console.log(error)
     }
